@@ -26,6 +26,11 @@ I will update this before the end of today.
 Collaborators: Kawika Miller
 Creater: Jacob Bassett
 
+## Wireframes
+
+Request and Response Cycle
+![class06_wireframe](./public/images/class06_wireframe.png)
+
 
 ## Progress Log
 
