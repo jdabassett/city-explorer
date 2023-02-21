@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import data from './data.json';
+// import data from './data.json';
 import Card from 'react-bootstrap/Card';
 
 const ACCESS_TOKEN = process.env.REACT_APP_LOCATION_ACCESS_TOKEN;
@@ -12,8 +12,8 @@ export default class App extends React.Component{
     super();
     this.state = {
       searchInput:"",
-      results:data,
-      showResults:true,
+      results:[],
+      showResults:false,
       error:null
     }
   }
