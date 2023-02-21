@@ -1,9 +1,14 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+import {BrowserRouter,Routes,Route,Link, redirect} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-// import data from './data.json';
+import data from './data.json';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const ACCESS_TOKEN = process.env.REACT_APP_LOCATION_ACCESS_TOKEN;
 
@@ -12,8 +17,9 @@ export default class App extends React.Component{
     super();
     this.state = {
       searchInput:"",
-      results:[],
-      showResults:false,
+      results:data,
+      showResults:true,
+      staticMap:null,
       error:null
     }
   }
@@ -28,18 +34,27 @@ export default class App extends React.Component{
     e.preventDefault();
     console.log('submitted');
     try {
-      let request = {
+      let requestData = {
         url:`https://us1.locationiq.com/v1/search?key=${ACCESS_TOKEN}&q=${this.state.searchInput}&format=json`,
         method:'GET'
       };
+      let requestStaticMap ={
+        url:`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=17.450419,78.381149&size=600x600&zoom=14&path=fillcolor:%2390EE90|weight:2|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055`,
+        method:'GET'
+      }
 
-      let response = await axios(request);
+      let responseData = await axios(requestData);
+      let responseStaticMap = await axios(requestStaticMap);
 
-      this.setState({results:response.data,showResults:true})
+      this.setState({
+        results:responseData.data,
+        showResults:true,
+        staticMap:responseStaticMap})
 
     } catch {
       console.log("catching error")
     }
+    console.log(this.state.staticMap);
   }
 
 
@@ -49,15 +64,22 @@ export default class App extends React.Component{
       <div className="App">
 
           <header className="App-header-container">
-            <form>
-              <input 
-                onChange={this.handlerOnChangeInput}
-                type="text" 
-                value={this.state.searchInput} 
-                placeholder="ENTER THE NAME OF A CITY HERE"/>
-              <button
-                onClick={this.handlerSubmit}>Explore!</button>
-            </form>
+            <Form style={{ width: '25rem', marginLeft:'auto', marginRight:'auto' , textAlign:'center', marginTop:"1em" }}>
+              <Form.Group className="mb-3" controlId="formBasicText">
+                <Form.Label htmlFor="citySearchBar">Search</Form.Label>
+                <Form.Control
+                  id="citySearchBar"
+                  onChange={this.handlerOnChangeInput}
+                  type="text" 
+                  value={this.state.searchInput} 
+                  placeholder="ENTER THE NAME OF A CITY HERE"/>
+                <Button style={{marginTop:'1em'}}
+                  onClick={this.handlerSubmit}
+                  variant="primary"
+                  type="submit"
+                  >Explore!</Button>
+              </Form.Group>
+            </Form>
           </header>
 
 
@@ -65,19 +87,31 @@ export default class App extends React.Component{
         {this.state.showResults 
         ? 
         <BrowserRouter>
-          <nav>
-            <h2>Use the links before to navigate to a feature.</h2>
-            <li><Link to={"/maps"}>Maps</Link></li>
-            <li><Link to={"/weather"}>Weather</Link></li>
-          </nav>
+          <Navbar 
+          style={{ width: '25rem', marginLeft:'auto', marginRight:'auto' , textAlign:'center', marginTop:"1em" }}
+          bg="dark" variant="dark">
+            <Container>
+              <Navbar.Brand href="#home"style={{color:"red"}}>Navigate</Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link ><Link to={"/maps"}>Maps</Link></Nav.Link>
+                <Nav.Link ><Link to={"/weather"}>Weather</Link></Nav.Link>
+
+              </Nav>
+            </Container>
+          </Navbar>
           <Routes>
             <Route path="/maps" element={
-                <Card style={{ width: '18rem' }}>
+                <Card 
+                  style={{ width: '18rem', marginLeft:'auto',marginRight:'auto', marginTop:"1em", borderRadius:"1em" }}>
                   <Card.Body>
                     <Card.Title>{this.state.results[0].display_name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Longitude: {this.state.results[0].lon}</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-muted">Latitude: {this.state.results[0].lat}</Card.Subtitle>
                   </Card.Body>
+                  <img 
+                    className="card-img-bottom" 
+                    src={`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=${this.state.results[0].lat},${this.state.results[0].lon}&size=600x600&zoom=12&path=fillcolor:%2390EE90|weight:2|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055`} 
+                    alt="Card"></img>
                 </Card>
             }></Route>
             <Route path="/weather" element={<p>weather boogers</p>}></Route>
