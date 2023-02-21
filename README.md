@@ -37,22 +37,22 @@ Request and Response Cycle
 I will use this section to track my performance. I will be recording features and measuring how long they took me to implement. 
 
 Feature Name: Build a form to accept user input and display location name, longitude and latitude.
-Estimate for development: 1.5 hrs
+Estimate for development: 01:30
 Start: 17:45
 End: 20:00
-Actual: 2:45
+Actual: 02:45
 
 Feature Name: Display static image and style elements with CSS and Bootstrap
-Estimate for development: 2hr
+Estimate for development: 02:00
 Start: 20:00
 End: 21.30
-Actual: 1:30
+Actual: 01:30
 
-Feature Name:
-Estimate for development:
-Start:
-End:
-Actual: 
+Feature Name: Display error message in the event of a failed request.
+Estimate for development: 01:00
+Start: 21:30
+End: 22:10
+Actual: 00:40
 
 Feature Name:
 Estimate for development:
