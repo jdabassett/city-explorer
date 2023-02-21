@@ -26,14 +26,19 @@ I will update this before the end of today.
 Collaborators: Kawika Miller
 Creater: Jacob Bassett
 
+## Wireframes
+
+Request and Response Cycle
+![class06_wireframe](./public/images/class06_wireframe.png)
+
 
 ## Progress Log
 
 I will use this section to track my performance. I will be recording features and measuring how long they took me to implement. 
 
-Feature Name: 
-Estimate for development:
-Start:
+Feature Name: Build a form to accept user input and display location name, longitude and latitude.
+Estimate for development: 1.5 hrs
+Start: 17:45
 End:
 Actual: 
 

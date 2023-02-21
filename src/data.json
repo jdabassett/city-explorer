@@ -1,0 +1,184 @@
+[
+  {
+      "place_id": "303779684",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "relation",
+      "osm_id": "237385",
+      "boundingbox": [
+          "47.4810022",
+          "47.7341354",
+          "-122.459696",
+          "-122.224433"
+      ],
+      "lat": "47.6038321",
+      "lon": "-122.330062",
+      "display_name": "Seattle, King County, Washington, USA",
+      "class": "boundary",
+      "type": "administrative",
+      "importance": 0.7729791735643787,
+      "icon": "https://locationiq.org/static/images/mapicons/poi_boundary_administrative.p.20.png"
+  },
+  {
+      "place_id": "54997738",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "node",
+      "osm_id": "4836954932",
+      "boundingbox": [
+          "20.7099684",
+          "20.7299684",
+          "-103.3863286",
+          "-103.3663286"
+      ],
+      "lat": "20.7199684",
+      "lon": "-103.3763286",
+      "display_name": "Seattle, Zapopan, Jalisco, 38901, Mexico",
+      "class": "place",
+      "type": "neighbourhood",
+      "importance": 0.35000999999999993
+  },
+  {
+      "place_id": "304660280",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "relation",
+      "osm_id": "7690268",
+      "boundingbox": [
+          "45.519281",
+          "45.5342887",
+          "-122.6321213",
+          "-122.6173035"
+      ],
+      "lat": "45.5265116",
+      "lon": "-122.6244677",
+      "display_name": "Laurelhurst, Portland, Multnomah County, Oregon, 97232, USA",
+      "class": "boundary",
+      "type": "administrative",
+      "importance": 0.3075723342298069,
+      "icon": "https://locationiq.org/static/images/mapicons/poi_boundary_administrative.p.20.png"
+  },
+  {
+      "place_id": "177932062",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "291707810",
+      "boundingbox": [
+          "25.1837689",
+          "25.1845505",
+          "121.4465868",
+          "121.4474398"
+      ],
+      "lat": "25.18415975",
+      "lon": "121.44693998598468",
+      "display_name": "Seattle, Tamsui District, New Taipei, Taiwan",
+      "class": "landuse",
+      "type": "residential",
+      "importance": 0.3000099999999999
+  },
+  {
+      "place_id": "254062525",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "742718561",
+      "boundingbox": [
+          "47.6484638",
+          "47.6484642",
+          "-122.3771108",
+          "-122.3769816"
+      ],
+      "lat": "47.6484642",
+      "lon": "-122.3771108",
+      "display_name": "West Dravus Street, Queen Anne, Seattle, King County, Washington, 98119, USA",
+      "class": "highway",
+      "type": "secondary",
+      "importance": 0.20000999999999994
+  },
+  {
+      "place_id": "104600311",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "10671266",
+      "boundingbox": [
+          "41.9611659",
+          "41.9657274",
+          "-121.9226362",
+          "-121.9226043"
+      ],
+      "lat": "41.9641881",
+      "lon": "-121.922629",
+      "display_name": "Seattle, Dorris, Siskiyou County, California, 96058, USA",
+      "class": "highway",
+      "type": "residential",
+      "importance": 0.20000999999999994
+  },
+  {
+      "place_id": "181552200",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "307770120",
+      "boundingbox": [
+          "28.8472264",
+          "28.8487875",
+          "-111.9789493",
+          "-111.9780146"
+      ],
+      "lat": "28.8481394",
+      "lon": "-111.9783605",
+      "display_name": "Seattle, Nuevo Kino, Bahía Kino, Hermosillo, Sonora, 83340, Mexico",
+      "class": "highway",
+      "type": "residential",
+      "importance": 0.20000999999999994
+  },
+  {
+      "place_id": "114244241",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "29546551",
+      "boundingbox": [
+          "14.4191845",
+          "14.4193677",
+          "120.9180883",
+          "120.9187908"
+      ],
+      "lat": "14.4192428",
+      "lon": "120.918312",
+      "display_name": "Seattle, ACM Woodstock Homes Phase 9, Imus, Cavite, Calabarzon, 4103, Philippines",
+      "class": "highway",
+      "type": "residential",
+      "importance": 0.19999999999999998
+  },
+  {
+      "place_id": "345937720",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "way",
+      "osm_id": "165271269",
+      "boundingbox": [
+          "14.6696649",
+          "14.6706154",
+          "121.0987357",
+          "121.0988688"
+      ],
+      "lat": "14.6699548",
+      "lon": "121.0987846",
+      "display_name": "Seattle, Batasan Hills, 2nd District, Quezon City, Eastern Manila District, Metro Manila, 1100, Philippines",
+      "class": "highway",
+      "type": "service",
+      "importance": 0.17499999999999996
+  },
+  {
+      "place_id": "5496935",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "node",
+      "osm_id": "668442224",
+      "boundingbox": [
+          "47.6028456",
+          "47.6029456",
+          "-122.33989",
+          "-122.33979"
+      ],
+      "lat": "47.6028956",
+      "lon": "-122.33984",
+      "display_name": "Seattle, Colman Dock, West Edge, Belltown, Seattle, King County, Washington, 98104, USA",
+      "class": "amenity",
+      "type": "ferry_terminal",
+      "importance": 0.10000999999999996
+  }
+]
