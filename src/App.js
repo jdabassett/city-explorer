@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Alert from 'react-bootstrap/Alert';
 
 const ACCESS_TOKEN = process.env.REACT_APP_LOCATION_ACCESS_TOKEN;
 
@@ -47,24 +48,26 @@ export default class App extends React.Component{
         results:responseData.data,
         showResults:true})
 
-    } catch {
-      console.log("catching error")
+    } catch(err) {
+      this.setState({error:err.response.status});
+      // console.log(err.response.status)
     }
-    console.log(this.state.staticMap);
   }
 
 
   render() {
-    // console.log(this.state.results);
+    console.log(this.state.error);
     return (
       <div className="App">
 
           <header className="App-header-container">
             <Form style={{ width: '25rem', marginLeft:'auto', marginRight:'auto' , textAlign:'center', marginTop:"1em" }}>
               <Form.Group className="mb-3" controlId="formBasicText">
-                <Form.Label htmlFor="citySearchBar">Search</Form.Label>
+                <Form.Label 
+                // htmlFor="citySearchBar"
+                >Search</Form.Label>
                 <Form.Control
-                  id="citySearchBar"
+                  // id="citySearchBar"
                   onChange={this.handlerOnChangeInput}
                   type="text" 
                   value={this.state.searchInput} 
@@ -80,7 +83,7 @@ export default class App extends React.Component{
 
 
 
-        {this.state.showResults 
+        {(this.state.showResults) && (this.state.error===null)
         ? 
         <BrowserRouter>
           <Navbar 
@@ -89,8 +92,8 @@ export default class App extends React.Component{
             <Container>
               <Navbar.Brand href="#home"style={{color:"red"}}>Navigate</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link ><Link to={"/maps"}>Maps</Link></Nav.Link>
-                <Nav.Link ><Link to={"/weather"}>Weather</Link></Nav.Link>
+                <Link to={"/maps"}>Maps</Link>
+                <Link to={"/weather"}>Weather</Link>
 
               </Nav>
             </Container>
@@ -113,8 +116,19 @@ export default class App extends React.Component{
             <Route path="/weather" element={<p>weather boogers</p>}></Route>
           </Routes>
         </BrowserRouter>
+
         : <h2 style={{ width: '25rem', marginLeft:'auto', marginRight:'auto' , textAlign:'center', marginTop:"1em" }}>Search for a city by typing it above and clicking the Explore Button.</h2>
         }
+
+        {(this.state.error!==null)? 
+          <>
+            <Alert variant="danger" onClose={() => this.setState({error:null})} dismissible>
+              <Alert.Heading>Error request status {this.state.error}, watch carefully what you enter in the search bar.</Alert.Heading>
+            </Alert>
+          </>
+        :null}
+
+
       </div>
     );
   }
