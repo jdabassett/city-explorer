@@ -31,9 +31,9 @@ Creater: Jacob Bassett
 
 I will use this section to track my performance. I will be recording features and measuring how long they took me to implement. 
 
-Feature Name: 
-Estimate for development:
-Start:
+Feature Name: Build a form to accept user input and display location name, longitude and latitude.
+Estimate for development: 1.5 hrs
+Start: 17:45
 End:
 Actual: 
 
