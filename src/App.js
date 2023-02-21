@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import data from './data.json';
+// import data from './data.json';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -17,8 +17,8 @@ export default class App extends React.Component{
     super();
     this.state = {
       searchInput:"",
-      results:data,
-      showResults:true,
+      results:[],
+      showResults:false,
       staticMap:null,
       error:null
     }
@@ -55,7 +55,7 @@ export default class App extends React.Component{
 
 
   render() {
-    console.log(this.state.results);
+    // console.log(this.state.results);
     return (
       <div className="App">
 
@@ -113,7 +113,7 @@ export default class App extends React.Component{
             <Route path="/weather" element={<p>weather boogers</p>}></Route>
           </Routes>
         </BrowserRouter>
-        : <h2>Search for a city by typing it above and clicking the Explore Button.</h2>
+        : <h2 style={{ width: '25rem', marginLeft:'auto', marginRight:'auto' , textAlign:'center', marginTop:"1em" }}>Search for a city by typing it above and clicking the Explore Button.</h2>
         }
       </div>
     );
