@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route,Link, redirect} from 'react-router-dom';
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import data from './data.json';
