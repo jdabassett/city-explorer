@@ -39,12 +39,12 @@ I will use this section to track my performance. I will be recording features an
 Feature Name: Build a form to accept user input and display location name, longitude and latitude.
 Estimate for development: 1.5 hrs
 Start: 17:45
-End:
-Actual: 
+End: 20:00
+Actual: 2:45
 
-Feature Name:
-Estimate for development:
-Start:
+Feature Name: Display static image and style elements with CSS and Bootstrap
+Estimate for development: 2hr
+Start: 20:00
 End:
 Actual: 
 
