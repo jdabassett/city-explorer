@@ -45,8 +45,8 @@ Actual: 2:45
 Feature Name: Display static image and style elements with CSS and Bootstrap
 Estimate for development: 2hr
 Start: 20:00
-End:
-Actual: 
+End: 21.30
+Actual: 1:30
 
 Feature Name:
 Estimate for development:

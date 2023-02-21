@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route,Link, redirect} from 'react-router-dom';
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import data from './data.json';
@@ -38,18 +38,14 @@ export default class App extends React.Component{
         url:`https://us1.locationiq.com/v1/search?key=${ACCESS_TOKEN}&q=${this.state.searchInput}&format=json`,
         method:'GET'
       };
-      let requestStaticMap ={
-        url:`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=17.450419,78.381149&size=600x600&zoom=14&path=fillcolor:%2390EE90|weight:2|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055`,
-        method:'GET'
-      }
+
 
       let responseData = await axios(requestData);
-      let responseStaticMap = await axios(requestStaticMap);
+
 
       this.setState({
         results:responseData.data,
-        showResults:true,
-        staticMap:responseStaticMap})
+        showResults:true})
 
     } catch {
       console.log("catching error")
