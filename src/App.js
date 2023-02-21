@@ -92,8 +92,8 @@ export default class App extends React.Component{
             <Container>
               <Navbar.Brand href="#home"style={{color:"red"}}>Navigate</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link ><Link to={"/maps"}>Maps</Link></Nav.Link>
-                <Nav.Link ><Link to={"/weather"}>Weather</Link></Nav.Link>
+                <Link to={"/maps"}>Maps</Link>
+                <Link to={"/weather"}>Weather</Link>
 
               </Nav>
             </Container>
